@@ -31,6 +31,7 @@ manager.add_surf('liver', vts3, fs3, ns3, (0,0,1))
 manager.show('Organ 3D Demo')
 ```
 
+![Organ](https://github.com/JunMa11/myvi/blob/master/myvi/imgs/organ.PNG)
 
 
 ### A sigle ball
