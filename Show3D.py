@@ -11,7 +11,8 @@ import scipy.ndimage as ndimg
 
 # get img data and spacing
 nii = nib.load('path to/data/organ.nii.gz')
-imgs = nii.get_data()
+imgs = nii.get_data() # 3D matrix; imgs.shape = (x,y,z)
+# if you do not know the spacing information, just set zoom = (1.0, 1.0, 1.0)
 zoom = nii.header.get_zooms()
 # smooth (may loss details)
 organ_1 = ndimg.gaussian_filter(np.float32(imgs==1), 1)
