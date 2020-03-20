@@ -53,9 +53,12 @@ def build_surf2d(img, ds=1, sigma=0, k=0.2):
 	ns = (ns.T/np.linalg.norm(ns, axis=1)).astype(np.float32).T
 	return vts, fs, ns, cs
 
-def build_surf3d(imgs, ds, level, step=1, c=(1,0,0)):
+def build_surf3d(imgs, ds, level, spacing, step=1, c=(1,0,0)):
+	"""
+	ds is the down sampling rate
+	"""
 	from skimage.measure import marching_cubes_lewiner
-	vts, fs, ns, cs =  marching_cubes_lewiner(imgs[::ds,::ds,::ds], level, step_size=step)
+	vts, fs, ns, cs =  marching_cubes_lewiner(imgs[::ds,::ds,::ds], level, spacing, step_size=step)
 	vts *= ds
 	cs = (np.ones((len(vts), 3))*c).astype(np.float32)
 	return vts, fs, ns, cs
