@@ -13,7 +13,7 @@ import scipy.ndimage as ndimg
 # get img data and spacing
 nii = nib.load('path to/myvi/data/organ.nii.gz')
 imgs = nii.get_data()
-zoom = nii.header.get_zooms()
+zoom = nii.header.get_zooms() # if you do not know the spacing information, just set zoom = (1.0, 1.0, 1.0)
 # smooth (may loss details)
 organ_1 = ndimg.gaussian_filter(np.float32(imgs==1), 1)
 organ_2 = ndimg.gaussian_filter(np.float32(imgs==2), 1)
