@@ -2,6 +2,8 @@ Myvi
 ======================
 Myvi is a 3D visualization tool, *the name comes from [mayavi](http://code.enthought.com/projects/mayavi/) (Myvi is a lighter one, it also means mine)*, Myvi is not as powerful as Mayavi, but to do some simple work it is enough, what is more, mayavi has a heavy dependence, *vtk, traits, chaco...*, it is difficult to install, has many historical burdens, and did not support wxpython-phoenix. However, myvi just needs ModernGL, supports wxpython-phoenix and you can use Myvi's Manager with any UI Framework (such as  QT) easily.
 
+**The tool can be used out-of-box when you install the packages in [requirements](https://github.com/Image-Py/imagepy/blob/master/requirements.txt).**
+
 ## Tutorial
 ### Show 3D segmentation reslts
 ```python
